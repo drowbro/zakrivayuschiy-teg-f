@@ -17,4 +17,424 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-primary);
+  font-variation-settings: "wght" var(--font-weight-normal, 400);
+  background-attachment: fixed;
+  background-size: cover;
+  background: var(--gradient-pattern);
+}
+
+.container {
+  max-inline-size: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-secondary);
+  line-height: normal;
+  text-transform: uppercase;
+  margin-top: 102px;
+  margin-bottom: 100px;
+}
+
+.header__card {
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-primary);
+}
+
+.header__logo-text {
+  display: block;
+  color: var(--color-primary);
+  font-family: var(--font-secondary);
+  font-size: var(--logo-text-size);
+  font-weight: var(--font-weight-static);
+  font-style: normal;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-top: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
+  margin-bottom: 20px;
+}
+
+.header__title {
+  color: var(--color-primary);
+  font-family: var(--font-secondary);
+  font-size: var(--title-size);
+  font-style: normal;
+  font-weight: var(--font-weight-static);
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.theme-menu__button {
+  position: relative;
+  color: var(--color-primary);
+  border: none;
+  padding: 0;
+  background-color: var(--color-secondary);
+  font-family: var(--font-secondary);
+  font-size: var(--text-size-small);
+  font-style: normal;
+  font-weight: var(--font-weight-static);
+  line-height: normal;
+  transition: opacity 0.3s ease;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.theme-menu__button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  scale: 0;
+  transform-origin: left;
+  transition: scale 0.3s ease;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible::after {
+  outline: none;
+  scale: 1;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.theme-menu__button:disabled::before {
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  content: "▶";
+  animation: animation-right-arrow 0.5s ease-in-out alternate infinite;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.card {
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-primary);
+  padding-bottom: 25px;
+}
+
+.card__title {
+  color: var(--color-primary);
+  font-family: var(--font-primary);
+  font-size: var(--text-size);
+  font-variation-settings: "wght" var(--font-weight-bold);
+  padding: 5px 10px;
+}
+
+.card__image-group {
+  position: relative;
+  border-top: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.card__watermark {
+  position: absolute;
+  z-index: 1;
+  top: 25px;
+  right: 11px;
+  color: var(--color-primary);
+  opacity: 0.5;
+  font-family: var(--font-secondary);
+  font-size: var(--text-size-small);
+  text-shadow: 0 0 1px var(--color-secondary);
+  mix-blend-mode: hard-light;
+  text-transform: uppercase;
+}
+
+.card__image {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1 / 1;
+}
+
+.card__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding: 25px;
+}
+
+.card__text {
+  color: var(--color-primary);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-size);
+  font-style: normal;
+  line-height: 21px;
+}
+
+.card__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.card__icon-button {
+  display: flex;
+  background: var(--color-secondary);
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+  appearance: none;
+  cursor: pointer;
+  height: fit-content;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.card__like-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: max-content;
+  max-width: 130px;
+}
+
+.like-icon {
+  block-size: 36px;
+  inline-size: 34px;
+  box-sizing: border-box;
+  height: min-content;
+}
+
+.button {
+  position: relative;
+  border: 2px solid var(--color-primary);
+  padding: 10px 35px;
+  background-color: var(--color-secondary);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-static);
+  font-size: var(--text-size-small);
+  line-height: 90%;
+  appearance: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background-color: var(--color-primary);
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0px 0px var(--color-primary);
+}
+
+.button__icon {
+  display: flex;
+  width: 28px;
+  height: 28px;
+  mix-blend-mode: difference;
+  color: var(--color-button-text);
+}
+
+.button__text {
+  display: block;
+  height: max-content;
+  font-family: var(--font-secondary);
+  font-size: var(--text-size-small);
+  font-style: normal;
+  font-weight: var(--font-weight-static);
+  line-height: 90%;
+  mix-blend-mode: difference;
+  color: var(--color-button-text);
+}
+
+.section__save {
+  display: flex;
+  align-items: flex-start;
+  margin: 0 auto;
+  justify-content: center;
+  margin-top: 48px;
+  margin-bottom: 102px;
+}
+
+.dialog {
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-secondary);
+  padding: 30px 40px;
+  max-width: 341px;
+  box-sizing: border-box;
+}
+
+.dialog[open] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.dialog__section {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.dialog__icon {
+  width: 39px;
+  height: 39px;
+  flex: none;
+}
+
+.dialog__text {
+  color: var(--color-primary);
+  font-family: var(--font-secondary);
+  font-size: var(--text-size-small);
+  font-style: normal;
+  font-weight: var(--font-weight-static);
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.dialog__button {
+  width: 100%;
+}
+
+.button__opener {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  width: fit-content;
+}
+
+.image__filter_sepia {
+  filter: sepia(80%);
+}
+
+.image__filter_saturate {
+  filter: saturate(2);
+}
+
+.image__filter_invert {
+  filter: invert(100%);
+}
+
+.image__filter_hue-rotate {
+  filter: hue-rotate(60deg);
+}
+
+.image__filter_grayscale {
+  filter: grayscale(100%);
+}
+
+.image__filter_brightness-blur {
+  filter: blur(2px) brightness(120%);
+}
+
+.image__filter_saturate-sepia {
+  filter: saturate(200%) sepia(70%);
+}
+
+@media (width >= 696px) {
+  .container {
+    max-inline-size: clamp(700px, 100%, var(--max-container-width));
+  }
+
+  .button__opener {
+    flex-direction: row;
+  }
+
+  .button__icon {
+    width: 21px;
+    height: 21px;
+  }
+
+  .dialog {
+    padding: 30px;
+    max-width: 353px;
+  }
+}
+
+@media (width < 374px) {
+  :root {
+    --logo-text-size: clamp(2.475rem, 2.5357rem + 1.6964vw, 4.0625rem);
+  }
+}
+
+@supports (
+  (-webkit-text-stroke: 1px var(--color-secondary)) or
+    (text-stroke: 1px var(--color-secondary))
+) {
+  .card__watermark {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--color-secondary);
+    text-stroke: 1px var(--color-secondary);
+  }
 }
