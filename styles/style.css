@@ -19,9 +19,7 @@
   min-block-size: 100dvb;
   font-family: var(--font-primary);
   font-variation-settings: "wght" var(--font-weight-normal, 400);
-  background-attachment: fixed;
-  background-size: cover;
-  background: var(--gradient-pattern);
+  background: var(--gradient-pattern), black;
 }
 
 .container {
@@ -430,11 +428,11 @@
 
 @supports (
   (-webkit-text-stroke: 1px var(--color-secondary)) or
-    (text-stroke: 1px var(--color-secondary))
+    (-webkit-text-stroke: 1px var(--color-secondary))
 ) {
   .card__watermark {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--color-secondary);
-    text-stroke: 1px var(--color-secondary);
+    -webkit-text-stroke: 1px var(--color-secondary);
   }
 }
