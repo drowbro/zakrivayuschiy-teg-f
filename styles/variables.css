@@ -10,7 +10,7 @@
   --color-white: #ffffff;
 
   --font-weight-static: 400;
-  --font-weight-normal: 400;
+  --font-weight-normal: 465;
   --font-weight-bold: 785;
 
   --logo-text-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);

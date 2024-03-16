@@ -18,8 +18,10 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--font-primary);
-  font-variation-settings: "wght" var(--font-weight-normal, 400);
-  background: var(--gradient-pattern), black;
+  font-variation-settings: "wght" var(--font-weight-normal, 465);
+  background: var(--gradient-pattern), var(--color-primary);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .container {
@@ -167,8 +169,9 @@
 .card__watermark {
   position: absolute;
   z-index: 1;
-  top: 25px;
-  right: 11px;
+  inset-block-start: 28px;
+  inset-inline-end: 3.5%;
+  mix-blend-mode: hard-light;
   color: var(--color-primary);
   opacity: 0.5;
   font-family: var(--font-secondary);
@@ -197,7 +200,7 @@
 .card__text {
   color: var(--color-primary);
   font-family: var(--font-primary);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-normal);
   font-size: var(--text-size);
   font-style: normal;
   line-height: 21px;
@@ -210,6 +213,7 @@
   align-items: center;
   padding-left: 25px;
   padding-right: 25px;
+  gap: 5px;
 }
 
 .card__icon-button {
